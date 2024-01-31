@@ -46,8 +46,7 @@ func SendStatus(service service) bool {
 	service.TransitionTime = generateRandomStatusRefer()
 	// fmt.Println(service.TransitionTime)
 	service.SecretKey = secretKey
-	url := "http://localhost:8000/api/time/" + fmt.Sprint(service.ID) + "/put/"
-	response, err := performPUTRequest(url, service)
+	response, err := performPUTRequest("http://localhost:8000/api/time/" + fmt.Sprint(service.ID) + "/put/", service)
 	if err != nil {
 		fmt.Println("Error sending status:", err)
 		return false
