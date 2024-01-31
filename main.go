@@ -22,7 +22,7 @@ type service struct {
 func main() {
 	r := gin.Default()
 
-	r.POST("/set_status", func(c *gin.Context) {
+	r.POST("/set_time", func(c *gin.Context) {
 		var service service
 
 		if err := c.ShouldBindJSON(&service); err != nil {
